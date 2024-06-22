@@ -1,4 +1,8 @@
 import { Module } from "@nestjs/common";
+import { WarehouseModule } from "./warehouse/warehouse.module";
+import { ProductModule } from "./product/product.module";
+import { InventoryModule } from "./inventory/inventory.module";
+import { ShipmentModule } from "./shipment/shipment.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -11,6 +15,10 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 @Module({
   controllers: [],
   imports: [
+    WarehouseModule,
+    ProductModule,
+    InventoryModule,
+    ShipmentModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
